@@ -20,16 +20,22 @@ angular.module('sbAdminApp')
 				var index = -1;
 
 				scope.pedidos = [
-					{id: 0, name: 'Pedido #1'},
-					{id: 1, name: 'Pedido #2'},
-					{id: 2, name: 'Pedido #3'},
-					{id: 3, name: 'Pedido #4'},
-					{id: 4, name: 'Pedido #5'},
-					{id: 5, name: 'Pedido #6'},
-					{id: 6, name: 'Pedido #7'},
-					{id: 7, name: 'Pedido #8'},
-					{id: 8, name: 'Pedido #9'},
-					{id: 9, name: 'Pedido #10'}
+					{id: 0, name: 'Pedido #1', mozo: 'Juan Carlos'},
+					{id: 1, name: 'Pedido #2', pedido:'', direccion:'', menu:'', mozo:'fede', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 2, name: 'Pedido #3', pedido:'', direccion:'', menu:'', mozo:'mica', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 3, name: 'Pedido #4', pedido:'', direccion:'', menu:'', mozo:'diego', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 4, name: 'Pedido #5', pedido:'', direccion:'', menu:'', mozo:'riso', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 5, name: 'Pedido #6', pedido:'', direccion:'', menu:'', mozo:'miguel', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 6, name: 'Pedido #7', pedido:'', direccion:'', menu:'', mozo:'boludo', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 7, name: 'Pedido #8', pedido:'', direccion:'', menu:'', mozo:'gon', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+					{id: 8, name: 'Pedido #9', pedido:'', direccion:'', menu:'', mozo:'tu Vieja', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
+				];
+
+				scope.mozos =[
+					{id: 0, name: 'fede'},
+					{id: 1, name: 'diego'},
+					{id: 2, name: 'mica'},
+					{id: 3, name: 'Magui'}
 				];
 
 				scope.setIndex = function (i) {
@@ -39,5 +45,6 @@ angular.module('sbAdminApp')
 				scope.getIndex = function () {
 					return index;
 				}
+
 			}
 	});

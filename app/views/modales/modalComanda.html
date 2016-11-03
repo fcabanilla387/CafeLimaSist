@@ -1,0 +1,59 @@
+<div class="modal fade" id="modalComanda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="well well-sm">
+
+                    <div class="row padding">
+                        <div class="col-md-4 col-sm-4 col-xl-4">
+                            <input type="text" class="form-control" placeholder="id">
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xl-4">
+                            <input type="text" class="form-control" placeholder="Pedido">
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xl-4">
+                            <input type="text" class="form-control" placeholder="Cliente">
+                        </div>
+
+
+
+                        <div class="col-md-4 col-sm-4 col-xl-4">
+                            <input type="text" class="form-control" placeholder="Menu" ng-model="pedidos[getIndex()].menu">
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xl-8">
+                            <input type="text" class="form-control" placeholder="Direccion">
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xl-4">
+                            <select name="singleSelect" id="singleSelect" ng-model="pedidos[getIndex()].mozo">
+                              <option value="">---Please select---</option> <!-- not selected / blank option -->
+                              <option ng-repeat="mozo in mozos" value="{{mozo.id}}">{{mozo.name}}</option> <!-- interpolation -->
+                            </select>
+                        </div>
+                        {{pedidos[getIndex()]}}
+
+                        <!--
+                        -->
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

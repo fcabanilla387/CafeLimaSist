@@ -5,47 +5,8 @@
             <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
             </span>
         </a>
-        <!-- {{pedidos}} -->
-        <!-- <a href="#pedido43" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-twitter fa-fw"></i> Pedido #43
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-envelope fa-fw"></i> Pedido #33
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-tasks fa-fw"></i> Pedido #12
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-upload fa-fw"></i> Pedido #34
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-bolt fa-fw"></i> Pedido #
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-warning fa-fw"></i> Pedido #18
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-shopping-cart fa-fw"></i> Pedido #19
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a>
-        <a href="#myModal" data-toggle="modal" class="list-group-item">
-            <i class="fa fa-money fa-fw"></i> Pedido #20
-            <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
-            </span>
-        </a> -->
     </div>
+    <a href="#" class="btn btn-default btn-block">Ver todas las comandas</a>
 
     <!-- MODALES -->
     <div class="modal fade" id="pedido43" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -68,7 +29,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.list-group -->
-    <a href="#" class="btn btn-default btn-block">Ver todas las comandas</a>
+    
 
 
     <!-- MODALES -->
@@ -79,47 +40,98 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
+
+
+                <div class="col-md-12">
+                    <div class="well well-sm">
+
+                        <div class="row padding">
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="id">
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Pedido">
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Cliente">
+                            </div>
+
+
+
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Menu" ng-model="pedidos[getIndex()].menu">
+                            </div>
+
+                            <div class="col-md-8 col-sm-8 col-xl-8">
+                                <input type="text" class="form-control" placeholder="Direccion">
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <select name="singleSelect" id="singleSelect" ng-model="pedidos[getIndex()].mozo">
+                                  <option value="">---Please select---</option> <!-- not selected / blank option -->
+                                  <option ng-repeat="mozo in mozos" value="{{mozo.id}}">{{mozo.name}}</option> <!-- interpolation -->
+                                </select>
+                            </div>
+                            {{pedidos[getIndex()]}}
+
+                            <!--
+                            -->
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <!--
                 <div class="row">
                     <div class="col-md-12">
                         <div class="well well-sm">
                             <form class="form-horizontal" method="post">
                                 <fieldset>
-                                    <legend class="text-center header">Contact us</legend>
-                                    {{pedidos[getIndex()]}}
+                                    <legend class="text-center header">Comandas</legend>
+                                    {{pedidos[getIndex()].mozo}}
 
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
 
                                     <div class="form-group">
                                         <div class="col-md-12 text-center">
@@ -131,6 +143,7 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
