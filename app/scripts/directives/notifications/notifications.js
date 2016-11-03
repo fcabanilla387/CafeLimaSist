@@ -16,6 +16,9 @@ angular.module('sbAdminApp')
     	}
 
 			function link(scope, element, attrs) {
+
+				var index = -1;
+
 				scope.pedidos = [
 					{id: 0, name: 'Pedido #1'},
 					{id: 1, name: 'Pedido #2'},
@@ -28,5 +31,13 @@ angular.module('sbAdminApp')
 					{id: 8, name: 'Pedido #9'},
 					{id: 9, name: 'Pedido #10'}
 				];
+
+				scope.setIndex = function (i) {
+					index = i;
+				}
+
+				scope.getIndex = function () {
+					return index;
+				}
 			}
 	});

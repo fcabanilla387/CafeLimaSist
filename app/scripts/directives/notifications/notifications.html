@@ -1,6 +1,6 @@
 <div class="panel-body">
     <div class="list-group">
-        <a ng-repeat="pedido in pedidos" href="#pedido32" data-toggle="modal" class="list-group-item">
+        <a ng-repeat="pedido in pedidos" ng-click="setIndex($index)" href="#pedido32" data-toggle="modal" class="list-group-item">
             <i class="fa fa-twitter fa-fw"></i> {{pedido.name}}
             <span class="pull-right text-muted small"><em><i class="fa fa-pencil fa-fw "></i></em>
             </span>
@@ -85,6 +85,7 @@
                             <form class="form-horizontal" method="post">
                                 <fieldset>
                                     <legend class="text-center header">Contact us</legend>
+                                    {{pedidos[getIndex()]}}
 
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
