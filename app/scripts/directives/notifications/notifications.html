@@ -16,13 +16,15 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
-                <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                
+
+
+
+
+
+
+
+
             </div>
             <!-- /.modal-content -->
         </div>
@@ -38,7 +40,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Editando {{pedidos[getIndex()].name}}</h4>
                 </div>
 
 
@@ -46,17 +48,32 @@
                     <div class="well well-sm">
 
                         <div class="row padding">
-                            <div class="col-md-4 col-sm-4 col-xl-4">
-                                <input type="text" class="form-control" placeholder="id">
+
+
+
+                            <div class="col-md-3 col-sm-3 col-xl-3">
+                                <input type="time" class="form-control" id="exampleInput" name="input" ng-model="example.value" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required />
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xl-4 col-md-offset-1">
+                                <select name="singleSelect" id="cliente" ng-model="pedidos[getIndex()].cliente" class="form-control">
+                                    <option value="" selected disabled>---Clientes---</option>
+                                    <option ng-repeat="cliente in clientes" value="{{cliente.id}}">{{cliente.name}}</option>
+                                </select>
                             </div>
 
                             <div class="col-md-4 col-sm-4 col-xl-4">
-                                <input type="text" class="form-control" placeholder="Pedido">
+                                <select name="singleSelect" id="mozo" ng-model="pedidos[getIndex()].mozo" class="form-control">
+                                    <option value="" selected disabled>---Mozo---</option>
+                                    <option ng-repeat="mozo in mozos" value="{{mozo.id}}">{{mozo.name}}</option>
+                                </select>
                             </div>
 
-                            <div class="col-md-4 col-sm-4 col-xl-4">
-                                <input type="text" class="form-control" placeholder="Cliente">
-                            </div>
+                            <div class="col-md- col-sm-8 col-xl-8" ng-model="pedidos[getIndex()].direccion">
+                                <input type="text" class="form-control" placeholder="Direccion" 
+                                value="{{clientes[pedidos[getIndex()].cliente].direccion}}">
+                            </div>                            
+
 
 
 
@@ -64,93 +81,42 @@
                                 <input type="text" class="form-control" placeholder="Menu" ng-model="pedidos[getIndex()].menu">
                             </div>
 
-                            <div class="col-md-8 col-sm-8 col-xl-8">
-                                <input type="text" class="form-control" placeholder="Direccion">
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value=""><span class="text-muted">Gaseosa?</span> 
+                                    </label>
+                                </div>
                             </div>
 
                             <div class="col-md-4 col-sm-4 col-xl-4">
-                                <select name="singleSelect" id="singleSelect" ng-model="pedidos[getIndex()].mozo">
-                                  <option value="">---Please select---</option> <!-- not selected / blank option -->
-                                  <option ng-repeat="mozo in mozos" value="{{mozo.id}}">{{mozo.name}}</option> <!-- interpolation -->
-                                </select>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value=""><span class="text-muted">Entregado?</span> 
+                                    </label>
+                                </div>
                             </div>
-                            {{pedidos[getIndex()]}}
 
-                            <!--
-                            -->
-
-
+                            <div class="col-md-4 col-sm-4 col-xl-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value=""><span class="text-muted">Cuenta Corriente?</span> 
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-                <!--
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="well well-sm">
-                            <form class="form-horizontal" method="post">
-                                <fieldset>
-                                    <legend class="text-center header">Comandas</legend>
-                                    {{pedidos[getIndex()].mozo}}
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                                            </div>
-                                        </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
                 </div>
             </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
     </div>
+
+
+
 </div>

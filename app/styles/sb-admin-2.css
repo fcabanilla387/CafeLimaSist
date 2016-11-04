@@ -358,5 +358,17 @@ table.dataTable thead .sorting:after {
 }
 
 .padding [class*="col-"] {
-    padding: 15px;
+    padding: 10px;
+}
+
+.form-control {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+
+.form-control .id{
+    padding-left: 3px;
+    padding-right: 3px;
+
 }
