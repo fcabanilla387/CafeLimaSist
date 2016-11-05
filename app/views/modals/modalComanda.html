@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title text-center" id="myModalLabel">Editando {{mcc.pedido.name}}</h4>
+</div>
+<div class="modal-body">
+  <div class="col-md-12">
+      <div class="well well-sm">
+
+          <div class="row padding">
+
+              <div class="col-md-3 col-sm-3 col-xl-3">
+                  <div uib-timepicker ng-model="mcc.pedido.time" show-meridian=false></div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xl-4 col-md-offset-1">
+                  <select name="singleSelect" id="cliente" ng-model="mcc.pedido.cliente" class="form-control">
+                      <option value="" selected disabled>---Clientes---</option>
+                      <option ng-repeat="cliente in mcc.clientes" value="{{cliente.id}}">{{cliente.name}}</option>
+                  </select>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xl-4">
+                  <select name="singleSelect" id="mozo" ng-model="mcc.pedido.mozo" class="form-control">
+                      <option value="" selected disabled>---Mozo---</option>
+                      <option ng-repeat="mozo in mcc.mozos" value="{{mozo.id}}">{{mozo.name}}</option>
+                  </select>
+              </div>
+
+              <div class="col-md- col-sm-8 col-xl-8" ng-model="mcc.pedido.direccion">
+                  <input type="text" class="form-control" placeholder="Direccion"
+                  value="{{mcc.clientes[mcc.pedido.cliente].direccion}}">
+              </div>
+
+
+
+
+              <div class="col-md-4 col-sm-4 col-xl-4">
+                  <input type="text" class="form-control" placeholder="Menu" ng-model="mcc.pedido.menu">
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xl-4">
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox" ng-model="mcc.pedido.gaseosa"><span class="text-muted">Gaseosa?</span>
+                      </label>
+                  </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xl-4">
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox" ng-model="mcc.pedido.entregado"><span class="text-muted">Entregado?</span>
+                      </label>
+                  </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xl-4">
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox" ng-model="mcc.pedido.cuentaCorriente"><span class="text-muted">Cuenta Corriente?</span>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+    <button type="button" ng-click="mcc.save()" class="btn btn-primary">Guardar Cambios</button>
+</div>

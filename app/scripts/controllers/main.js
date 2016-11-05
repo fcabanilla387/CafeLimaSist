@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('MainCtrl', function() {
+  .controller('MainCtrl', function($uibModal) {
 
         var mc = this;
 
@@ -25,29 +25,26 @@ angular.module('sbAdminApp')
           {id: 8, name: 'Pedido #9', pedido:'', direccion:'', menu:'', mozo:'', cliente:'', entregado:'', cuentaCorriente:'', pagado:''},
         ];
 
-        mc.mozos =[
-          {id: 0, name: 'fede'},
-          {id: 1, name: 'diego'},
-          {id: 2, name: 'mica'},
-          {id: 3, name: 'Magui'}
-        ];
-
-        mc.clientes =[
-          {id: 0, name: 'Camila', direccion: '13'},
-          {id: 1, name: 'moni', direccion: '342'},
-          {id: 2, name: 'Laura', direccion: '45341'},
-          {id: 3, name: 'Jose', direccion: '123'},
-          {id: 4, name: 'Pablo', direccion: '464'},
-        ];
-
-        mc.time = new Date();
-
-        mc.setIndex = function (i) {
+        mc.openModal = function (i) {
           index = i;
-        }
+          var modalInstance = $uibModal.open({
+              controller: "ModalComandaCtrl",
+              controllerAs: 'mcc',
+              templateUrl: 'views/modals/modalComanda.html',
+              resolve: {
+                pedido: function () {
+                          return mc.pedidos[index];
+                        }
+              }
+          });
 
-        mc.getIndex = function () {
-          return index;
+          modalInstance.result.then(function (pedido) {
+            console.log(pedido);
+          }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+          });
+
+
         }
 
   });
