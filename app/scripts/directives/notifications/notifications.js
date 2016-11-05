@@ -46,9 +46,7 @@ angular.module('sbAdminApp')
 					{id: 4, name: 'Pablo', direccion: '464'},
 				];
 
-				scope.dateTimePicker = function(){
-
-				}
+				scope.time = new Date();
 
 				scope.setIndex = function (i) {
 					index = i;

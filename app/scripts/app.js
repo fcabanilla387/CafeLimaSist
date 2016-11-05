@@ -15,7 +15,7 @@ angular
     'angular-loading-bar',
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
-    
+
     $ocLazyLoadProvider.config({
       debug:false,
       events:true,
@@ -77,6 +77,7 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'MainCtrl',
+        controllerAs: 'mc',
         templateUrl:'views/dashboard/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
@@ -154,5 +155,3 @@ angular
        url:'/grid'
    })
   }]);
-
-    
