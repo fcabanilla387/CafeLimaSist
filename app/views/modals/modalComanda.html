@@ -26,16 +26,25 @@
                   </select>
               </div>
 
-              <div class="col-md- col-sm-8 col-xl-8" ng-model="mcc.pedido.direccion">
+              <div class="col-md-1"></div>
+
+              <div class="col-md-8 col-sm-8 col-xl-8" ng-model="mcc.pedido.direccion">
                   <input type="text" class="form-control" placeholder="Direccion"
                   value="{{mcc.clientes[mcc.pedido.cliente].direccion}}">
               </div>
 
+              <div class="col-md-1"></div>
 
+              <div class="col-md-5 col-sm-5 col-xl-5">
+<!--                   <input type="text" class="form-control" placeholder="Menu" ng-model="mcc.pedido.menu">
+ -->                  <select name="singleSelect" id="menu" ng-model="mcc.pedido.menu" class="form-control">
+                      <option value="" selected disabled>---Menu---</option>
+                      <option ng-repeat="menu in mcc.menues" value="{{menu.id}}">{{menu.menu}}</option>
+                  </select>
+              </div>
 
-
-              <div class="col-md-4 col-sm-4 col-xl-4">
-                  <input type="text" class="form-control" placeholder="Menu" ng-model="mcc.pedido.menu">
+              <div class="col-md-3 col-sm-3 col-xl-3">
+                  <button type="button" ng-click= "" class="btn btn-success"->Agregar Menu</button>
               </div>
 
               <div class="col-md-4 col-sm-4 col-xl-4">
