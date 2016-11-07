@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('MainCtrl', function($uibModal) {
+  .controller('MainCtrl', function($uibModal, $log) {
 
         var mc = this;
 

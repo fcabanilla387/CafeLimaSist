@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('ModalComandaCtrl', function($uibModalInstance, pedido) {
+  .controller('ModalComandaCtrl', function($uibModal, $uibModalInstance, $log, pedido) {
 
         var mcc = this;
         mcc.pedido = pedido;
@@ -39,6 +39,25 @@ angular.module('sbAdminApp')
 
         mcc.save = function () {
            $uibModalInstance.close(mcc.pedido);
+        }
+
+        mcc.newModalMenu = function () {
+          var modalInstance = $uibModal.open({
+              // controller: "ModalComandaCtrl",
+              // controllerAs: 'mcc',
+              templateUrl: 'views/modals/modalMenu.html'//,
+              // resolve: {
+              //   pedido: function () {
+              //             return mc.pedidos[index];
+              //           }
+              // }
+          });
+
+          modalInstance.result.then(function () {
+            console.log("cerro menu modal");
+          }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+          });
         }
 
   });
